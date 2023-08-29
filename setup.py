@@ -23,23 +23,22 @@ except Exception:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setuptools.setup(
-    name='pumpwood_models',
-    version='0.0',
+    name='pumpwood-models',
+    version='0.1',
     include_package_data=True,
     license='BSD-3-Clause License',
-    description='Package for creation of mathematical model on Pumpwood',
+    description='Package for creation of mathematical model on Pumpwood.',
     long_description=README,
     long_description_content_type="text/markdown",
-    url='',
-    author='André Andrade Baceti',
+    url='https://github.com/Murabei-OpenSource-Codes/pumpwood-models',
+    author='Murabei Data Science',
     author_email='a.baceti@murabei.com',
     classifiers=[
+        "Programming Language :: Python :: 3",
+        "Operating System :: OS Independent",
     ],
-    install_requires=['requests',
-                      'simplejson',
-                      'pandas',
-                      "pumpwood-communication>=0.25",
-                      "pumpwood-miscellaneous>=0.18",
-                      "pyarrow==3.0.0"],
-    dependency_links=[]
+    package_dir={"": "src"},
+    install_requires=requirements,
+    packages=setuptools.find_packages(where="src"),
+    python_requires=">=3.6",
 )
